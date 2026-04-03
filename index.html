@@ -857,6 +857,228 @@ footer{text-align:center;padding:1.5rem;font-size:.75rem;color:var(--ink-faint);
     </div>
   </div>
 
+  <!-- OMNICHANNEL BI DASHBOARD -->
+  <div class="dash-card reveal" style="margin-bottom:2rem">
+    <div class="dash-header">
+      <div class="dash-title-row">
+        <div class="dash-icon" style="background:linear-gradient(135deg,#7C3AED,#0A7CFF)">
+          <svg viewBox="0 0 16 16" style="width:16px;height:16px;fill:none;stroke:#fff;stroke-width:1.5;stroke-linecap:round">
+            <circle cx="3" cy="8" r="2"/><circle cx="13" cy="3" r="2"/><circle cx="13" cy="13" r="2"/>
+            <line x1="5" y1="7" x2="11" y2="4"/><line x1="5" y1="9" x2="11" y2="12"/>
+          </svg>
+        </div>
+        <div>
+          <div class="dash-name">Omnichannel BI — Pharma Commercial</div>
+          <div style="font-size:.6rem;color:var(--ink-faint)">Power BI · Salesforce · HCP Engagement · Updated daily</div>
+        </div>
+      </div>
+      <div class="dash-period">YTD 2024</div>
+    </div>
+
+    <!-- TOP KPIs -->
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border)">
+      <div class="dkpi">
+        <div class="dkpi-lbl">Total Interactions</div>
+        <div class="dkpi-num up">84,312</div>
+        <div class="dkpi-delta pos">↑ +31.2% vs LY</div>
+      </div>
+      <div class="dkpi">
+        <div class="dkpi-lbl">HCPs Reached</div>
+        <div class="dkpi-num">6,847</div>
+        <div class="dkpi-delta pos">↑ +14.5%</div>
+      </div>
+      <div class="dkpi">
+        <div class="dkpi-lbl">Email Open Rate</div>
+        <div class="dkpi-num up">38.4%</div>
+        <div class="dkpi-delta pos">↑ +4.1pp</div>
+      </div>
+      <div class="dkpi">
+        <div class="dkpi-lbl">WhatsApp Response</div>
+        <div class="dkpi-num up">62.1%</div>
+        <div class="dkpi-delta pos">↑ +9.3pp</div>
+      </div>
+      <div class="dkpi">
+        <div class="dkpi-lbl">Event Attendance</div>
+        <div class="dkpi-num warn">71.8%</div>
+        <div class="dkpi-delta neg">↓ -2.4pp</div>
+      </div>
+    </div>
+
+    <div class="dash-body">
+
+      <!-- CHANNEL MIX + TREND -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 200px;gap:1rem;margin-bottom:1rem">
+
+        <!-- Channel breakdown bars -->
+        <div>
+          <div class="bar-chart-label">Interactions by channel</div>
+          <div style="display:flex;flex-direction:column;gap:.55rem">
+
+            <div style="display:flex;align-items:center;gap:.6rem">
+              <span style="font-size:.65rem;color:var(--ink-mid);min-width:72px;font-weight:500">📧 Email</span>
+              <div style="flex:1;height:10px;background:var(--surface2);border-radius:999px;overflow:hidden">
+                <div style="width:78%;height:100%;background:#0A7CFF;border-radius:999px;animation:grow 1.2s ease both .1s"></div>
+              </div>
+              <span style="font-size:.65rem;color:var(--ink-light);min-width:32px;text-align:right">34.2K</span>
+            </div>
+
+            <div style="display:flex;align-items:center;gap:.6rem">
+              <span style="font-size:.65rem;color:var(--ink-mid);min-width:72px;font-weight:500">💬 WhatsApp</span>
+              <div style="flex:1;height:10px;background:var(--surface2);border-radius:999px;overflow:hidden">
+                <div style="width:56%;height:100%;background:#25D366;border-radius:999px;animation:grow 1.2s ease both .2s"></div>
+              </div>
+              <span style="font-size:.65rem;color:var(--ink-light);min-width:32px;text-align:right">24.5K</span>
+            </div>
+
+            <div style="display:flex;align-items:center;gap:.6rem">
+              <span style="font-size:.65rem;color:var(--ink-mid);min-width:72px;font-weight:500">🎯 Events</span>
+              <div style="flex:1;height:10px;background:var(--surface2);border-radius:999px;overflow:hidden">
+                <div style="width:38%;height:100%;background:#7C3AED;border-radius:999px;animation:grow 1.2s ease both .3s"></div>
+              </div>
+              <span style="font-size:.65rem;color:var(--ink-light);min-width:32px;text-align:right">16.1K</span>
+            </div>
+
+            <div style="display:flex;align-items:center;gap:.6rem">
+              <span style="font-size:.65rem;color:var(--ink-mid);min-width:72px;font-weight:500">☁️ Salesforce</span>
+              <div style="flex:1;height:10px;background:var(--surface2);border-radius:999px;overflow:hidden">
+                <div style="width:21%;height:100%;background:#00A1E0;border-radius:999px;animation:grow 1.2s ease both .4s"></div>
+              </div>
+              <span style="font-size:.65rem;color:var(--ink-light);min-width:32px;text-align:right">9.5K</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Monthly trend sparkline -->
+        <div>
+          <div class="bar-chart-label">Monthly interaction trend</div>
+          <div style="display:flex;align-items:flex-end;gap:4px;height:72px">
+            <div class="b" style="background:#BFDBFE;height:45%;animation-delay:.05s"></div>
+            <div class="b" style="background:#BFDBFE;height:52%;animation-delay:.1s"></div>
+            <div class="b" style="background:#93C5FD;height:48%;animation-delay:.15s"></div>
+            <div class="b" style="background:#93C5FD;height:61%;animation-delay:.2s"></div>
+            <div class="b" style="background:#60A5FA;height:58%;animation-delay:.25s"></div>
+            <div class="b" style="background:#3B82F6;height:74%;animation-delay:.3s"></div>
+            <div class="b" style="background:#2563EB;height:69%;animation-delay:.35s"></div>
+            <div class="b" style="background:#1D4ED8;height:82%;animation-delay:.4s"></div>
+            <div class="b" style="background:#1D4ED8;height:78%;animation-delay:.45s"></div>
+            <div class="b" style="background:#0A7CFF;height:91%;animation-delay:.5s"></div>
+            <div class="b" style="background:#0A7CFF;height:88%;animation-delay:.55s"></div>
+            <div class="b" style="background:#0063D6;height:100%;animation-delay:.6s"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-top:.3rem">
+            <span style="font-size:.52rem;color:var(--ink-faint)">Jan</span>
+            <span style="font-size:.52rem;color:var(--ink-faint)">Mar</span>
+            <span style="font-size:.52rem;color:var(--ink-faint)">Jun</span>
+            <span style="font-size:.52rem;color:var(--ink-faint)">Sep</span>
+            <span style="font-size:.52rem;color:var(--ink-faint)">Dec</span>
+          </div>
+        </div>
+
+        <!-- Channel donut -->
+        <div style="display:flex;flex-direction:column;align-items:center">
+          <div class="bar-chart-label" style="text-align:center;width:100%">Channel mix</div>
+          <svg width="110" height="110" viewBox="0 0 110 110">
+            <circle cx="55" cy="55" r="42" fill="none" stroke="#EEF0F4" stroke-width="14"/>
+            <!-- Email 41% -->
+            <circle cx="55" cy="55" r="42" fill="none" stroke="#0A7CFF" stroke-width="14"
+              stroke-dasharray="108 264" stroke-dashoffset="42" stroke-linecap="butt"/>
+            <!-- WhatsApp 29% -->
+            <circle cx="55" cy="55" r="42" fill="none" stroke="#25D366" stroke-width="14"
+              stroke-dasharray="76 264" stroke-dashoffset="-66" stroke-linecap="butt"/>
+            <!-- Events 19% -->
+            <circle cx="55" cy="55" r="42" fill="none" stroke="#7C3AED" stroke-width="14"
+              stroke-dasharray="50 264" stroke-dashoffset="-142" stroke-linecap="butt"/>
+            <!-- Salesforce 11% -->
+            <circle cx="55" cy="55" r="42" fill="none" stroke="#00A1E0" stroke-width="14"
+              stroke-dasharray="30 264" stroke-dashoffset="-192" stroke-linecap="butt"/>
+            <text x="55" y="51" text-anchor="middle" font-family="Fraunces,serif" font-size="14" font-weight="600" fill="#0D1117">41%</text>
+            <text x="55" y="63" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7.5" fill="#9CA3AF">Email</text>
+          </svg>
+          <div style="display:flex;flex-direction:column;gap:.2rem;width:100%">
+            <div style="display:flex;align-items:center;gap:.4rem;font-size:.6rem;color:var(--ink-mid)"><span style="width:8px;height:8px;border-radius:2px;background:#0A7CFF;display:block;flex-shrink:0"></span>Email 41%</div>
+            <div style="display:flex;align-items:center;gap:.4rem;font-size:.6rem;color:var(--ink-mid)"><span style="width:8px;height:8px;border-radius:2px;background:#25D366;display:block;flex-shrink:0"></span>WhatsApp 29%</div>
+            <div style="display:flex;align-items:center;gap:.4rem;font-size:.6rem;color:var(--ink-mid)"><span style="width:8px;height:8px;border-radius:2px;background:#7C3AED;display:block;flex-shrink:0"></span>Events 19%</div>
+            <div style="display:flex;align-items:center;gap:.4rem;font-size:.6rem;color:var(--ink-mid)"><span style="width:8px;height:8px;border-radius:2px;background:#00A1E0;display:block;flex-shrink:0"></span>Salesforce 11%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HCP ENGAGEMENT TABLE -->
+      <div class="tbl-wrap">
+        <div class="tbl-row head" style="grid-template-columns:1.4fr .8fr .7fr .7fr .7fr .6fr">
+          <div class="tbl-cell h">HCP / Specialty</div>
+          <div class="tbl-cell h">Interactions</div>
+          <div class="tbl-cell h">Email</div>
+          <div class="tbl-cell h">WhatsApp</div>
+          <div class="tbl-cell h">Events</div>
+          <div class="tbl-cell h">SF Score</div>
+        </div>
+        <div class="tbl-row" style="grid-template-columns:1.4fr .8fr .7fr .7fr .7fr .6fr">
+          <div class="tbl-cell"><span style="font-weight:500">Dr. Ana Lima</span> <span style="font-size:.6rem;color:var(--ink-faint)">· Oncology</span></div>
+          <div class="tbl-cell" style="font-weight:600;color:var(--ink)">24</div>
+          <div class="tbl-cell">12 <span style="font-size:.6rem;color:var(--green)">↑</span></div>
+          <div class="tbl-cell">8</div>
+          <div class="tbl-cell">4</div>
+          <div class="tbl-cell"><span class="badge g">A+</span></div>
+        </div>
+        <div class="tbl-row" style="grid-template-columns:1.4fr .8fr .7fr .7fr .7fr .6fr">
+          <div class="tbl-cell"><span style="font-weight:500">Dr. Carlos Melo</span> <span style="font-size:.6rem;color:var(--ink-faint)">· Cardiology</span></div>
+          <div class="tbl-cell" style="font-weight:600;color:var(--ink)">18</div>
+          <div class="tbl-cell">7</div>
+          <div class="tbl-cell">9 <span style="font-size:.6rem;color:var(--green)">↑</span></div>
+          <div class="tbl-cell">2</div>
+          <div class="tbl-cell"><span class="badge g">A</span></div>
+        </div>
+        <div class="tbl-row" style="grid-template-columns:1.4fr .8fr .7fr .7fr .7fr .6fr">
+          <div class="tbl-cell"><span style="font-weight:500">Dr. Paula Souza</span> <span style="font-size:.6rem;color:var(--ink-faint)">· Endocrinology</span></div>
+          <div class="tbl-cell" style="font-weight:600;color:var(--ink)">11</div>
+          <div class="tbl-cell">6</div>
+          <div class="tbl-cell">3</div>
+          <div class="tbl-cell">2</div>
+          <div class="tbl-cell"><span class="badge y">B+</span></div>
+        </div>
+        <div class="tbl-row" style="grid-template-columns:1.4fr .8fr .7fr .7fr .7fr .6fr">
+          <div class="tbl-cell"><span style="font-weight:500">Dr. Ricardo Neves</span> <span style="font-size:.6rem;color:var(--ink-faint)">· Neurology</span></div>
+          <div class="tbl-cell" style="font-weight:600;color:var(--ink)">9</div>
+          <div class="tbl-cell">4</div>
+          <div class="tbl-cell">4</div>
+          <div class="tbl-cell">1</div>
+          <div class="tbl-cell"><span class="badge y">B</span></div>
+        </div>
+      </div>
+
+      <!-- EMAIL METRICS ROW -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-top:1rem">
+        <div style="background:var(--accent-light);border:1px solid #BAD8FF;border-radius:10px;padding:.75rem">
+          <div style="font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem">📧 Email metrics</div>
+          <div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--ink-mid);margin-bottom:.2rem"><span>Open rate</span><span style="font-weight:600;color:var(--accent)">38.4%</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--ink-mid);margin-bottom:.2rem"><span>Click rate</span><span style="font-weight:600;color:var(--accent)">12.1%</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--ink-mid)"><span>Unsubscribe</span><span style="font-weight:600;color:var(--ink-light)">0.8%</span></div>
+        </div>
+        <div style="background:#F0FDF4;border:1px solid #A7F3D0;border-radius:10px;padding:.75rem">
+          <div style="font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#059669;margin-bottom:.3rem">💬 WhatsApp metrics</div>
+          <div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--ink-mid);margin-bottom:.2rem"><span>Delivered</span><span style="font-weight:600;color:#059669">98.2%</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--ink-mid);margin-bottom:.2rem"><span>Read rate</span><span style="font-weight:600;color:#059669">74.3%</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--ink-mid)"><span>Response</span><span style="font-weight:600;color:#059669">62.1%</span></div>
+        </div>
+        <div style="background:#F5F3FF;border:1px solid #C4B5FD;border-radius:10px;padding:.75rem">
+          <div style="font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#7C3AED;margin-bottom:.3rem">🎯 Events metrics</div>
+          <div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--ink-mid);margin-bottom:.2rem"><span>Events held</span><span style="font-weight:600;color:#7C3AED">142</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--ink-mid);margin-bottom:.2rem"><span>Attendance</span><span style="font-weight:600;color:#7C3AED">71.8%</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--ink-mid)"><span>NPS avg</span><span style="font-weight:600;color:#7C3AED">8.4</span></div>
+        </div>
+        <div style="background:#EFF8FF;border:1px solid #BAE6FD;border-radius:10px;padding:.75rem">
+          <div style="font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#00A1E0;margin-bottom:.3rem">☁️ Salesforce CRM</div>
+          <div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--ink-mid);margin-bottom:.2rem"><span>Calls logged</span><span style="font-weight:600;color:#00A1E0">9,512</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--ink-mid);margin-bottom:.2rem"><span>HCP coverage</span><span style="font-weight:600;color:#00A1E0">84.2%</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--ink-mid)"><span>Data quality</span><span style="font-weight:600;color:#059669">96.1%</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <!-- PIPELINE DIAGRAM -->
   <div class="pipeline-wrap reveal">
     <div class="pipeline-title">Data Pipeline Architecture</div>

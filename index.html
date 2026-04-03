@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gustavo Taguchi — Senior Data Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust:100%}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0D1117;
+  --ink-mid:#374151;
+  --ink-light:#6B7280;
+  --ink-faint:#9CA3AF;
+  --page:#FFFFFF;
+  --surface:#F7F8FA;
+  --surface2:#EEF0F4;
+  --accent:#0A7CFF;
+  --accent-dim:#0063D6;
+  --accent-light:#E8F1FF;
+  --green:#059669;
+  --green-light:#ECFDF5;
+  --amber:#D97706;
+  --amber-light:#FFFBEB;
+  --border:#E5E7EB;
+  --border-strong:#D1D5DB;
+  --radius:12px;
+  --radius-lg:20px;
+}
+html{scroll-behavior:smooth;font-size:16px;min-height:100%}
+body{font-family:'Outfit',sans-serif;background:var(--page);color:var(--ink);line-height:1.6;overflow-x:hidden;width:100%;min-width:320px;font-size:16px}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 3rem;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:600;color:var(--ink);letter-spacing:-0.01em}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2.5rem}
+.nav-links a{font-size:0.82rem;font-weight:500;color:var(--ink-light);text-decoration:none;letter-spacing:0.05em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{font-size:0.82rem;font-weight:600;color:var(--accent);border:1.5px solid var(--accent);padding:.4rem 1rem;border-radius:999px;text-decoration:none;transition:all .2s}
+.nav-cta:hover{background:var(--accent);color:#fff}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;display:flex;align-items:center;
+  padding:8rem 3rem 5rem;max-width:1200px;margin:0 auto;
+}
+.hero-inner{display:grid;grid-template-columns:1fr 440px;gap:5rem;align-items:center}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--green);background:var(--green-light);
+  border:1px solid #A7F3D0;padding:.3rem .85rem;border-radius:999px;margin-bottom:1.8rem;
+}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{
+  font-family:'Fraunces',serif;font-size:clamp(2.6rem,4.5vw,4rem);
+  font-weight:300;line-height:1.08;letter-spacing:-0.03em;margin-bottom:1.2rem;
+}
+.hero h1 strong{font-weight:600}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero-desc{font-size:1rem;color:var(--ink-mid);line-height:1.75;margin-bottom:2rem;max-width:500px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem}
+.chip{
+  font-size:.75rem;font-weight:500;padding:.3rem .75rem;border-radius:999px;
+  background:var(--surface2);color:var(--ink-mid);border:1px solid var(--border);
+  transition:all .2s;
+}
+.chip.blue{background:var(--accent-light);color:var(--accent);border-color:#BAD8FF}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:.45rem;
+  padding:.75rem 1.6rem;border-radius:10px;font-size:.88rem;font-weight:600;
+  text-decoration:none;transition:all .2s;border:none;cursor:pointer;
+}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dim);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--border-strong)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── PROFILE CARD ── */
+.profile-card{
+  background:var(--page);border:1px solid var(--border);border-radius:var(--radius-lg);
+  box-shadow:0 4px 40px rgba(0,0,0,0.08);overflow:hidden;
+}
+.profile-top{
+  background:linear-gradient(135deg,#0A7CFF 0%,#0D4FD8 100%);
+  padding:2rem;display:flex;flex-direction:column;align-items:center;gap:.75rem;
+}
+.profile-avatar{
+  width:90px;height:90px;border-radius:50%;
+  border:3px solid rgba(255,255,255,0.3);overflow:hidden;
+  background:#1e3a7a;display:flex;align-items:center;justify-content:center;
+  font-family:'Fraunces',serif;font-size:2rem;color:#fff;
+}
+.profile-avatar img{width:100%;height:100%;object-fit:cover}
+.profile-name{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:600;color:#fff;text-align:center}
+.profile-title{font-size:.75rem;color:rgba(255,255,255,.75);letter-spacing:.06em;text-transform:uppercase;text-align:center}
+.profile-body{padding:1.5rem}
+.profile-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:1.2rem}
+.pstat{background:var(--page);padding:.85rem .5rem;text-align:center}
+.pstat-num{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600;color:var(--ink);line-height:1}
+.pstat-lbl{font-size:.62rem;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.06em;margin-top:.15rem}
+.profile-langs{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.2rem}
+.lang-item{display:flex;align-items:center;justify-content:space-between;font-size:.78rem}
+.lang-name{display:flex;align-items:center;gap:.4rem;color:var(--ink-mid);font-weight:500}
+.lang-level{font-size:.68rem;padding:.15rem .5rem;border-radius:999px;background:var(--surface2);color:var(--ink-light);font-weight:500}
+.lang-level.native{background:#ECFDF5;color:var(--green)}
+.lang-level.advanced{background:var(--accent-light);color:var(--accent)}
+
+/* ── SECTION ── */
+.section{max-width:1200px;margin:0 auto;padding:6rem 3rem}
+.section-inner{max-width:1200px;margin:0 auto}
+.s-eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+.s-title{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;line-height:1.1;letter-spacing:-0.02em;margin-bottom:.75rem}
+.s-title strong{font-weight:600}
+.s-sub{font-size:.95rem;color:var(--ink-mid);max-width:520px;line-height:1.75;margin-bottom:2.5rem}
+.divider{border:none;border-top:1px solid var(--border);margin:0}
+
+/* ── SKILLS ── */
+.skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.skill-list{display:flex;flex-direction:column;gap:1.2rem}
+.skill-row{}
+.skill-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem}
+.skill-label{font-size:.85rem;font-weight:600;color:var(--ink)}
+.skill-pct{font-size:.75rem;color:var(--ink-light);font-weight:500}
+.track{height:6px;background:var(--surface2);border-radius:999px;overflow:hidden}
+.fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent),#38BDF8);
+  animation:grow 1.4s cubic-bezier(.22,1,.36,1) both}
+.fill.green{background:linear-gradient(90deg,var(--green),#34D399)}
+@keyframes grow{from{width:0!important}}
+
+/* ── SQL ILLUSTRATION ── */
+.code-card{
+  background:var(--ink);border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:0 8px 40px rgba(0,0,0,0.15);
+}
+.code-topbar{
+  display:flex;align-items:center;gap:.4rem;padding:.75rem 1rem;
+  background:#1a1f2e;border-bottom:1px solid #2d3448;
+}
+.code-topbar span{display:block;width:12px;height:12px;border-radius:50%}
+.code-filename{font-size:.72rem;color:#6B7A99;margin-left:.5rem;font-family:monospace}
+.code-body{padding:1.2rem 1.5rem;font-family:'Courier New',monospace;font-size:.78rem;line-height:1.8;color:#cdd6f4}
+.kw{color:#89b4fa}
+.fn{color:#cba6f7}
+.str{color:#a6e3a1}
+.cm{color:#45475a}
+.num{color:#fab387}
+.tbl{color:#89dceb}
+
+/* ── DASHBOARD ILLUSTRATION ── */
+.dash-card{
+  background:var(--page);border:1px solid var(--border);border-radius:var(--radius-lg);
+  box-shadow:0 4px 24px rgba(0,0,0,0.07);overflow:hidden;
+}
+.dash-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 1.25rem;border-bottom:1px solid var(--border);
+  background:var(--surface);
+}
+.dash-title-row{display:flex;align-items:center;gap:.6rem}
+.dash-icon{width:28px;height:28px;background:var(--accent);border-radius:7px;display:flex;align-items:center;justify-content:center}
+.dash-icon svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round}
+.dash-name{font-size:.82rem;font-weight:600;color:var(--ink)}
+.dash-period{font-size:.7rem;color:var(--ink-faint);border:1px solid var(--border);padding:.15rem .6rem;border-radius:999px}
+.dash-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border)}
+.dkpi{background:var(--page);padding:.9rem .75rem}
+.dkpi-num{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:600;color:var(--ink)}
+.dkpi-num.up{color:var(--green)}
+.dkpi-num.warn{color:var(--amber)}
+.dkpi-lbl{font-size:.6rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-faint);margin-bottom:.2rem}
+.dkpi-delta{font-size:.65rem;font-weight:600;margin-top:.1rem}
+.dkpi-delta.pos{color:var(--green)}
+.dkpi-delta.neg{color:#EF4444}
+.dash-body{padding:1.25rem}
+.chart-row{display:flex;gap:1rem}
+.bar-chart-wrap{flex:1}
+.bar-chart-label{font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.75rem}
+.bars{display:flex;align-items:flex-end;gap:5px;height:80px}
+.b{border-radius:4px 4px 0 0;flex:1;animation:riseUp 1.2s cubic-bezier(.22,1,.36,1) both}
+@keyframes riseUp{from{transform:scaleY(0);transform-origin:bottom}}
+.line-wrap{width:140px;background:var(--surface);border-radius:10px;padding:.75rem}
+.line-label{font-size:.6rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.5rem}
+.donut-center{display:flex;flex-direction:column;align-items:center;justify-content:center}
+.donut-num{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:600;color:var(--ink)}
+.donut-sub{font-size:.55rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-faint)}
+.tbl-wrap{margin-top:1rem;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.tbl-row{display:grid;grid-template-columns:1fr .6fr .5fr .5fr;border-bottom:1px solid var(--border)}
+.tbl-row:last-child{border-bottom:none}
+.tbl-row.head{background:var(--surface)}
+.tbl-cell{padding:.4rem .7rem;font-size:.65rem;color:var(--ink-mid)}
+.tbl-cell.h{font-weight:600;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.06em}
+.badge{display:inline-block;padding:.1rem .4rem;border-radius:999px;font-size:.6rem;font-weight:600}
+.badge.g{background:#DCFCE7;color:#166534}
+.badge.y{background:#FEF9C3;color:#854D0E}
+
+/* ── PIPELINE ── */
+.pipeline-wrap{background:var(--surface);border-radius:var(--radius-lg);padding:2rem;border:1px solid var(--border)}
+.pipeline-title{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:1.5rem;text-align:center}
+.pipeline-stages{display:flex;align-items:center;gap:0;position:relative}
+.p-stage{
+  flex:1;display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  position:relative;z-index:1;
+}
+.p-node{
+  width:52px;height:52px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem;position:relative;
+  box-shadow:0 2px 12px rgba(0,0,0,.08);
+}
+.p-node::after{
+  content:'';position:absolute;top:50%;right:-100%;
+  transform:translateY(-50%);
+  width:100%;height:2px;
+  z-index:-1;
+}
+.p-stage:last-child .p-node::after{display:none}
+.p-label{font-size:.68rem;font-weight:600;color:var(--ink);text-align:center;line-height:1.3}
+.p-sub{font-size:.6rem;color:var(--ink-faint);text-align:center}
+.p-arrow{color:var(--ink-faint);font-size:.8rem;flex-shrink:0;margin:0 .2rem;padding-bottom:1.8rem}
+.pipeline-detail{display:grid;grid-template-columns:repeat(5,1fr);gap:.75rem;margin-top:1.5rem}
+.pd-card{background:var(--page);border:1px solid var(--border);border-radius:10px;padding:.75rem;text-align:center}
+.pd-tool{font-size:.68rem;font-weight:600;color:var(--ink);margin-bottom:.15rem}
+.pd-type{font-size:.58rem;color:var(--ink-faint)}
+
+/* ── EXPERIENCE ── */
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.exp-card{
+  background:var(--page);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.5rem;transition:all .2s;
+}
+.exp-card:hover{border-color:var(--accent);box-shadow:0 4px 24px rgba(10,124,255,.1);transform:translateY(-2px)}
+.exp-sector{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.6rem}
+.exp-icon{font-size:1.8rem;margin-bottom:.6rem;display:block}
+.exp-name{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:600;color:var(--ink);margin-bottom:.4rem}
+.exp-desc{font-size:.78rem;color:var(--ink-mid);line-height:1.65;margin-bottom:1rem}
+.exp-tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.etag{font-size:.65rem;padding:.2rem .55rem;border-radius:6px;background:var(--surface2);color:var(--ink-mid);font-weight:500}
+
+/* ── DELIVERABLES ── */
+.deliver-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+.d-card{
+  display:flex;gap:1rem;align-items:flex-start;
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem;
+  transition:all .2s;
+}
+.d-card:hover{background:var(--page);border-color:var(--accent-light);box-shadow:0 2px 16px rgba(10,124,255,.07)}
+.d-icon{
+  width:40px;height:40px;border-radius:10px;background:var(--accent-light);
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;
+}
+.d-title{font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:.25rem}
+.d-desc{font-size:.75rem;color:var(--ink-mid);line-height:1.6}
+
+/* ── KPI STRIP ── */
+.kpi-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem}
+.kpi-item{text-align:center}
+.kpi-num{font-family:'Fraunces',serif;font-size:2.6rem;font-weight:600;color:var(--ink);line-height:1}
+.kpi-num.accent{color:var(--accent)}
+.kpi-desc{font-size:.75rem;color:var(--ink-mid);margin-top:.3rem;line-height:1.4}
+
+/* ── CONTACT ── */
+.contact-wrap{
+  max-width:1200px;margin:0 auto;padding:0 3rem 5rem;
+}
+.contact-inner{
+  background:linear-gradient(135deg,var(--ink) 0%,#1a2744 100%);
+  border-radius:var(--radius-lg);padding:4rem;text-align:center;
+  position:relative;overflow:hidden;
+}
+.contact-inner::before{
+  content:'';position:absolute;top:-80px;right:-80px;
+  width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(10,124,255,.25) 0%,transparent 70%);
+  pointer-events:none;
+}
+.contact-inner::after{
+  content:'';position:absolute;bottom:-60px;left:-60px;
+  width:240px;height:240px;border-radius:50%;
+  background:radial-gradient(circle,rgba(56,189,248,.15) 0%,transparent 70%);
+  pointer-events:none;
+}
+.contact-inner>*{position:relative;z-index:1}
+.contact-eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#60A5FA;margin-bottom:.75rem}
+.contact-title{font-family:'Fraunces',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;color:#fff;margin-bottom:.75rem;letter-spacing:-0.02em}
+.contact-sub{color:rgba(255,255,255,.6);font-size:.92rem;margin-bottom:2rem}
+.contact-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--ink);font-weight:600}
+.btn-white:hover{background:#F3F4F6}
+.btn-ghost-white{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3)}
+.btn-ghost-white:hover{border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.05)}
+
+footer{text-align:center;padding:1.5rem;font-size:.75rem;color:var(--ink-faint);border-top:1px solid var(--border)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero-inner,.skills-layout,.exp-grid{grid-template-columns:1fr}
+  .profile-card{max-width:380px}
+  .deliver-grid{grid-template-columns:1fr}
+  .kpi-strip{grid-template-columns:repeat(2,1fr)}
+  nav{padding:1rem 1.5rem}
+  .nav-links{gap:1.2rem}
+  .section{padding:4rem 1.5rem}
+  .contact-wrap{padding:0 1.5rem 4rem}
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Gustavo <span>Taguchi</span></div>
+  <div class="nav-links">
+    <a href="#profile">Profile</a>
+    <a href="#skills">Skills</a>
+    <a href="#showcase">Timeline</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="https://www.linkedin.com/in/gustavo-taguchi/" class="nav-cta" target="_blank">LinkedIn ↗</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════ -->
+<div class="section hero" style="padding-top:8rem;padding-bottom:4rem">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">Open to new opportunities</div>
+      <h1>
+        <strong>Senior Data</strong><br>
+        <em>Analyst</em> — turning<br>
+        raw data into<br>
+        <strong>clear decisions</strong>
+      </h1>
+      <p class="hero-desc">
+        10+ years delivering business-driven insights through clean dashboards, scalable SQL models, and executive-ready analytics across banking, pharma, and consulting.
+      </p>
+      <div class="hero-chips">
+        <span class="chip blue">SQL</span>
+        <span class="chip blue">Power BI</span>
+        <span class="chip blue">Tableau</span>
+        <span class="chip blue">BigQuery</span>
+        <span class="chip blue">AWS</span>
+        <span class="chip">Scrum / Agile</span>
+        <span class="chip">Salesforce</span>
+        <span class="chip">Analytics Engineering</span>
+      </div>
+      <div class="hero-btns">
+        <a href="https://www.linkedin.com/in/gustavo-taguchi/" class="btn btn-primary" target="_blank">View LinkedIn ↗</a>
+        <a href="https://github.com/gutaguchi" class="btn btn-outline" target="_blank">GitHub Projects</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="profile-card">
+        <div class="profile-top">
+          <div class="profile-avatar">
+            <img src="https://avatars.githubusercontent.com/u/62962656?v=4" alt="Gustavo Taguchi" onerror="this.style.display='none';this.parentElement.innerHTML='GT'">
+          </div>
+          <div class="profile-name">Gustavo Taguchi</div>
+          <div class="profile-title">Senior Data Analyst · São Paulo, BR</div>
+        </div>
+        <div class="profile-body">
+          <div class="profile-stats">
+            <div class="pstat"><div class="pstat-num">10+</div><div class="pstat-lbl">Years</div></div>
+            <div class="pstat"><div class="pstat-num">3</div><div class="pstat-lbl">Industries</div></div>
+            <div class="pstat"><div class="pstat-num">6</div><div class="pstat-lbl">Certifications</div></div>
+          </div>
+          <div class="profile-langs">
+            <div class="lang-item"><span class="lang-name">🇧🇷 Portuguese</span><span class="lang-level native">Native</span></div>
+            <div class="lang-item"><span class="lang-name">🇺🇸 English</span><span class="lang-level advanced">Advanced</span></div>
+            <div class="lang-item"><span class="lang-name">🇪🇸 Spanish</span><span class="lang-level">Intermediate</span></div>
+          </div>
+
+          <!-- Core competencies list -->
+          <div style="border-top:1px solid var(--border);padding-top:1rem">
+            <div style="font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.75rem">Core competencies</div>
+            <div style="display:flex;flex-direction:column;gap:.5rem">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <span style="font-size:.78rem;color:var(--ink-mid);font-weight:500">SQL & Data Modeling</span>
+                <div style="display:flex;gap:3px">
+                  <div style="width:18px;height:5px;border-radius:3px;background:var(--accent)"></div>
+                  <div style="width:18px;height:5px;border-radius:3px;background:var(--accent)"></div>
+                  <div style="width:18px;height:5px;border-radius:3px;background:var(--accent)"></div>
+                  <div style="width:18px;height:5px;border-radius:3px;background:var(--accent)"></div>
+                  <div style="width:18px;height:5px;border-radius:3px;background:var(--accent)"></div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <span style="font-size:.78rem;color:var(--ink-mid);font-weight:500">Power BI</span>
+                <div style="display:flex;gap:3px">
+                  <div style="width:18px;height:5px;border-radius:3px;background:var(--accent)"></div>
+                  <div style="width:18px;height:5px;border-radius:3px;background:var(--accent)"></div>
+                  <div style="width:18px;height:5px;border-radius:3px;background:var(--accent)"></div>
+                  <div style="width:18px;height:5px;border-radius:3px;background:var(--accent)"></div>
+                  <div style="width:18px;height:5px;border-radius:3px;background:var(--accent)"></div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <span style="font-size:.78rem;color:var(--ink-mid);font-weight:500">Tableau</span>
+                <div style="display:flex;gap:3px">
+                  <div style="width:18px;height:5px;border-radius:3px;background:var(--accent)"></div>
+                  <div style="width:18px;height:5px;border-radius:3px;background:var(--accent)"></div>
+                  <div style="width:18px;height:5px;border-radius:3px;background:var(--accent)"></div>
+                  <div style="width:18px;height:5px;border-radius:3px;background:var(--accent)"></div>
+                  <div style="width:18px;height:5px;border-radius:3px;background:var(--accent)"></div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <span style="font-size:.78rem;color:var(--ink-mid);font-weight:500">Snowflake / Redshift</span>
+                <div style="display:flex;gap:3px">
+                  <div style="width:18px;height:5px;border-radius:3px;background:var(--accent)"></div>
+                  <div style="width:18px;height:5px;border-radius:3px;background:var(--accent)"></div>
+                  <div style="width:18px;height:5px;border-radius:3px;background:var(--accent)"></div>
+                  <div style="width:18px;height:5px;border-radius:3px;background:#EEF0F4"></div>
+                  <div style="width:18px;height:5px;border-radius:3px;background:#EEF0F4"></div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <span style="font-size:.78rem;color:var(--ink-mid);font-weight:500">Scrum / Agile</span>
+                <div style="display:flex;gap:3px">
+                  <div style="width:18px;height:5px;border-radius:3px;background:var(--accent)"></div>
+                  <div style="width:18px;height:5px;border-radius:3px;background:var(--accent)"></div>
+                  <div style="width:18px;height:5px;border-radius:3px;background:var(--accent)"></div>
+                  <div style="width:18px;height:5px;border-radius:3px;background:var(--accent)"></div>
+                  <div style="width:18px;height:5px;border-radius:3px;background:#EEF0F4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════
+     KPI STRIP
+════════════════════════════════════════════════ -->
+<div class="section" style="padding-top:3rem;padding-bottom:3rem">
+  <div class="kpi-strip reveal">
+    <div class="kpi-item"><div class="kpi-num accent">10+</div><div class="kpi-desc">Years delivering analytics in high-stakes environments</div></div>
+    <div class="kpi-item"><div class="kpi-num">3</div><div class="kpi-desc">Industries — Banking, Pharmaceuticals & Consulting</div></div>
+    <div class="kpi-item"><div class="kpi-num accent">0</div><div class="kpi-desc">Broken data models on Monday mornings</div></div>
+    <div class="kpi-item"><div class="kpi-num">∞</div><div class="kpi-desc">Dashboards that ask "so what?" not just "what happened?"</div></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════
+     SKILLS + SQL
+════════════════════════════════════════════════ -->
+<div class="section" id="skills">
+  <div class="s-eyebrow">Technical stack</div>
+  <h2 class="s-title">Skills that <strong>move the needle</strong></h2>
+  <p class="s-sub">Advanced proficiency across the full analytics pipeline — from raw extraction to boardroom-ready narrative.</p>
+
+  <div class="skills-layout">
+    <div class="skill-list reveal">
+      <div class="skill-row">
+        <div class="skill-meta"><span class="skill-label">SQL & Data Modeling</span><span class="skill-pct">95%</span></div>
+        <div class="track"><div class="fill" style="width:95%;animation-delay:.1s"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-meta"><span class="skill-label">Power BI</span><span class="skill-pct">92%</span></div>
+        <div class="track"><div class="fill" style="width:92%;animation-delay:.2s"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-meta"><span class="skill-label">Tableau</span><span class="skill-pct">88%</span></div>
+        <div class="track"><div class="fill green" style="width:88%;animation-delay:.3s"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-meta"><span class="skill-label">BigQuery / Cloud</span><span class="skill-pct">83%</span></div>
+        <div class="track"><div class="fill" style="width:83%;animation-delay:.4s"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-meta"><span class="skill-label">AWS</span><span class="skill-pct">78%</span></div>
+        <div class="track"><div class="fill green" style="width:78%;animation-delay:.5s"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-meta"><span class="skill-label">Scrum / Agile</span><span class="skill-pct">90%</span></div>
+        <div class="track"><div class="fill" style="width:90%;animation-delay:.6s"></div></div>
+      </div>
+
+      <div style="margin-top:1.5rem;padding:1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)">
+        <div style="font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.75rem">Also proficient in</div>
+        <div style="display:flex;flex-wrap:wrap;gap:.4rem">
+          <span class="chip">Salesforce Analytics</span>
+          <span class="chip">DAX</span>
+          <span class="chip">Analytics Engineering</span>
+          <span class="chip">Data Storytelling</span>
+          <span class="chip">Stakeholder Management</span>
+          <span class="chip">KPI Design</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SQL CODE CARD -->
+    <div class="code-card reveal" style="animation-delay:.2s">
+      <div class="code-topbar">
+        <span style="background:#FF5F57"></span>
+        <span style="background:#FEBC2E"></span>
+        <span style="background:#28C840"></span>
+        <span class="code-filename">executive_sales_model.sql</span>
+      </div>
+      <div class="code-body">
+<span class="cm">-- Executive Sales Performance Model</span>
+<span class="cm">-- Author: Gustavo Taguchi</span>
+
+<span class="kw">WITH</span> <span class="tbl">monthly_sales</span> <span class="kw">AS</span> (
+  <span class="kw">SELECT</span>
+    <span class="fn">DATE_TRUNC</span>(<span class="str">'month'</span>, order_date) <span class="kw">AS</span> month,
+    region,
+    rep_id,
+    <span class="fn">SUM</span>(revenue)            <span class="kw">AS</span> total_revenue,
+    <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> client_id) <span class="kw">AS</span> active_clients
+  <span class="kw">FROM</span> <span class="tbl">fact_orders</span>
+  <span class="kw">WHERE</span> status = <span class="str">'closed_won'</span>
+  <span class="kw">GROUP BY</span> <span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>
+),
+
+<span class="tbl">ranked</span> <span class="kw">AS</span> (
+  <span class="kw">SELECT</span>
+    *,
+    <span class="fn">LAG</span>(total_revenue) <span class="kw">OVER</span> (
+      <span class="kw">PARTITION BY</span> region, rep_id
+      <span class="kw">ORDER BY</span> month
+    ) <span class="kw">AS</span> prev_revenue,
+    <span class="fn">RANK</span>() <span class="kw">OVER</span> (
+      <span class="kw">PARTITION BY</span> month
+      <span class="kw">ORDER BY</span> total_revenue <span class="kw">DESC</span>
+    ) <span class="kw">AS</span> rank_in_period
+  <span class="kw">FROM</span> <span class="tbl">monthly_sales</span>
+)
+
+<span class="kw">SELECT</span>
+  month,
+  region,
+  total_revenue,
+  <span class="fn">ROUND</span>((total_revenue - prev_revenue)
+    / <span class="fn">NULLIF</span>(prev_revenue, <span class="num">0</span>) * <span class="num">100</span>, <span class="num">2</span>) <span class="kw">AS</span> mom_growth_pct,
+  rank_in_period
+<span class="kw">FROM</span> <span class="tbl">ranked</span>
+<span class="kw">WHERE</span> rank_in_period &lt;= <span class="num">10</span>
+<span class="kw">ORDER BY</span> month <span class="kw">DESC</span>, rank_in_period;
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════
+     TECHNICAL PROFILE
+════════════════════════════════════════════════ -->
+<div class="section" id="profile" style="padding-bottom:3rem">
+  <div class="s-eyebrow">Who I am</div>
+  <h2 class="s-title">Technical <strong>profile</strong></h2>
+  <p class="s-sub">A data professional with business instincts — analytical depth paired with the ability to communicate clearly at every level of an organization.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:1.5rem">
+    <div class="exp-card reveal" style="padding:1.25rem">
+      <span style="font-size:1.4rem;display:block;margin-bottom:.5rem">🧠</span>
+      <div class="exp-name" style="font-size:1rem;margin-bottom:.3rem">Analytical mindset</div>
+      <div class="exp-desc">I approach every dataset as a business problem first. I translate complex data into clear narratives that drive action — not just reports that fill slides.</div>
+    </div>
+    <div class="exp-card reveal" style="padding:1.25rem;animation-delay:.1s">
+      <span style="font-size:1.4rem;display:block;margin-bottom:.5rem">🔗</span>
+      <div class="exp-name" style="font-size:1rem;margin-bottom:.3rem">Full-stack analytics</div>
+      <div class="exp-desc">From raw SQL extraction and data modeling to cloud warehouses, BI visualization and executive storytelling — I cover the entire pipeline with hands-on depth.</div>
+    </div>
+    <div class="exp-card reveal" style="padding:1.25rem;animation-delay:.2s">
+      <span style="font-size:1.4rem;display:block;margin-bottom:.5rem">🌍</span>
+      <div class="exp-name" style="font-size:1rem;margin-bottom:.3rem">Global communicator</div>
+      <div class="exp-desc">Advanced English, native Portuguese, intermediate Spanish. Comfortable leading analytics discussions with C-level stakeholders in cross-cultural, international environments.</div>
+    </div>
+    <div class="exp-card reveal" style="padding:1.25rem;animation-delay:.3s">
+      <span style="font-size:1.4rem;display:block;margin-bottom:.5rem">🏛️</span>
+      <div class="exp-name" style="font-size:1rem;margin-bottom:.3rem">Academic foundation</div>
+      <div class="exp-desc">B.Sc. in Information Systems from Mackenzie University (2011) and postgrad in Business Intelligence from FGV (2015) — top Brazilian academic institutions.</div>
+    </div>
+    <div class="exp-card reveal" style="padding:1.25rem;animation-delay:.4s">
+      <span style="font-size:1.4rem;display:block;margin-bottom:.5rem">📜</span>
+      <div class="exp-name" style="font-size:1rem;margin-bottom:.3rem">Continuous learner</div>
+      <div class="exp-desc">6 certifications across BI, cloud, methodology and programming — and actively pursuing Python and Data Engineering since 2024. Learning never stops.</div>
+    </div>
+    <div class="exp-card reveal" style="padding:1.25rem;animation-delay:.5s">
+      <span style="font-size:1.4rem;display:block;margin-bottom:.5rem">⚡</span>
+      <div class="exp-name" style="font-size:1rem;margin-bottom:.3rem">Agile practitioner</div>
+      <div class="exp-desc">Certified Scrum Master with hands-on experience leading cross-functional squads. Comfortable in fast-paced, iterative environments with shifting priorities.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════
+     TIMELINE
+════════════════════════════════════════════════ -->
+<div class="section" id="showcase" style="padding-bottom:3rem">
+  <div class="s-eyebrow">Education &amp; certifications</div>
+  <h2 class="s-title">A journey of <strong>continuous growth</strong></h2>
+  <p class="s-sub">From Mackenzie in 2011 to cloud and engineering in 2024+ — every year building on the last.</p>
+
+  <div class="reveal" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2.5rem 2rem;overflow-x:auto">
+    <!-- SVG Timeline -->
+    <svg id="timeline-svg" viewBox="0 0 960 260" width="100%" style="min-width:680px;display:block">
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+          <path d="M1 1L9 5L1 9" fill="none" stroke="#D1D5DB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+
+      <!-- axis line -->
+      <line x1="30" y1="130" x2="940" y2="130" stroke="#D1D5DB" stroke-width="1.5" marker-end="url(#arr)"/>
+
+      <!-- year ticks -->
+      <!-- 2011 -->
+      <line x1="60" y1="124" x2="60" y2="136" stroke="#9CA3AF" stroke-width="1"/>
+      <text x="60" y="150" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#9CA3AF">2011</text>
+      <!-- 2013 -->
+      <line x1="178" y1="124" x2="178" y2="136" stroke="#E5E7EB" stroke-width="1"/>
+      <text x="178" y="150" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#D1D5DB">2013</text>
+      <!-- 2015 -->
+      <line x1="296" y1="124" x2="296" y2="136" stroke="#9CA3AF" stroke-width="1"/>
+      <text x="296" y="150" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#9CA3AF">2015</text>
+      <!-- 2017 -->
+      <line x1="414" y1="124" x2="414" y2="136" stroke="#E5E7EB" stroke-width="1"/>
+      <text x="414" y="150" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#D1D5DB">2017</text>
+      <!-- 2019 -->
+      <line x1="532" y1="124" x2="532" y2="136" stroke="#9CA3AF" stroke-width="1"/>
+      <text x="532" y="150" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#9CA3AF">2019</text>
+      <!-- 2021 -->
+      <line x1="650" y1="124" x2="650" y2="136" stroke="#E5E7EB" stroke-width="1"/>
+      <text x="650" y="150" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#D1D5DB">2021</text>
+      <!-- 2023 -->
+      <line x1="768" y1="124" x2="768" y2="136" stroke="#E5E7EB" stroke-width="1"/>
+      <text x="768" y="150" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#D1D5DB">2023</text>
+      <!-- 2025 -->
+      <line x1="886" y1="124" x2="886" y2="136" stroke="#9CA3AF" stroke-width="1"/>
+      <text x="886" y="150" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#9CA3AF">2025</text>
+
+      <!-- ── EVENTS above line ── -->
+
+      <!-- 2011 Mackenzie -->
+      <line x1="60" y1="130" x2="60" y2="72" stroke="#0A7CFF" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <circle cx="60" cy="130" r="7" fill="#0A7CFF"/>
+      <text x="60" y="4" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" font-weight="600" fill="#0A7CFF">🎓 B.Sc. Information Systems</text>
+      <text x="60" y="17" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8.5" fill="#6B7280">Mackenzie University</text>
+      <rect x="18" y="24" width="84" height="42" rx="6" fill="#EFF6FF" stroke="#BAD8FF" stroke-width="1"/>
+      <text x="60" y="38" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#1D4ED8" font-weight="600">Information</text>
+      <text x="60" y="49" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#1D4ED8" font-weight="600">Systems</text>
+      <text x="60" y="61" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7.5" fill="#6B7280">Mackenzie · 2011</text>
+
+      <!-- 2015 FGV -->
+      <line x1="296" y1="130" x2="296" y2="72" stroke="#059669" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <circle cx="296" cy="130" r="7" fill="#059669"/>
+      <rect x="252" y="24" width="88" height="42" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+      <text x="296" y="38" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#065F46" font-weight="600">Postgrad BI</text>
+      <text x="296" y="49" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#065F46" font-weight="600">&amp; Data Analytics</text>
+      <text x="296" y="61" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7.5" fill="#6B7280">FGV · 2015</text>
+
+      <!-- ── EVENTS below line ── -->
+
+      <!-- 2019 SAS -->
+      <line x1="532" y1="130" x2="532" y2="188" stroke="#D97706" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <circle cx="532" cy="130" r="7" fill="#D97706"/>
+      <rect x="490" y="190" width="84" height="42" rx="6" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1"/>
+      <text x="532" y="204" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#92400E" font-weight="600">SAS Certified</text>
+      <text x="532" y="215" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#92400E" font-weight="600">Guide</text>
+      <text x="532" y="227" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7.5" fill="#6B7280">SAS Institute · 2019</text>
+
+      <!-- 2020 Tableau + Scrum (above) -->
+      <line x1="591" y1="130" x2="591" y2="72" stroke="#0A7CFF" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <circle cx="591" cy="130" r="7" fill="#0A7CFF"/>
+      <rect x="549" y="24" width="84" height="42" rx="6" fill="#EFF6FF" stroke="#BAD8FF" stroke-width="1"/>
+      <text x="591" y="38" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#1D4ED8" font-weight="600">Tableau Desktop</text>
+      <text x="591" y="49" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#1D4ED8" font-weight="600">Specialist</text>
+      <text x="591" y="61" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7.5" fill="#6B7280">Tableau · 2020</text>
+
+      <!-- 2020 Scrum (below) -->
+      <line x1="632" y1="130" x2="632" y2="188" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <circle cx="632" cy="130" r="7" fill="#7C3AED"/>
+      <rect x="590" y="190" width="84" height="42" rx="6" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="1"/>
+      <text x="632" y="204" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#5B21B6" font-weight="600">Scrum Master</text>
+      <text x="632" y="215" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#5B21B6" font-weight="600">Certified</text>
+      <text x="632" y="227" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7.5" fill="#6B7280">Scrum.org · 2020</text>
+
+      <!-- 2024 AWS (above) -->
+      <line x1="827" y1="130" x2="827" y2="72" stroke="#D97706" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <circle cx="827" cy="130" r="7" fill="#D97706"/>
+      <rect x="785" y="24" width="84" height="42" rx="6" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1"/>
+      <text x="827" y="38" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#92400E" font-weight="600">AWS Cloud</text>
+      <text x="827" y="49" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#92400E" font-weight="600">Practitioner</text>
+      <text x="827" y="61" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7.5" fill="#6B7280">Amazon · 2024</text>
+
+      <!-- 2024+ Python (below) -->
+      <line x1="878" y1="130" x2="878" y2="188" stroke="#059669" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <circle cx="878" cy="130" r="7" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="3,2"/>
+      <rect x="836" y="190" width="84" height="42" rx="6" fill="#F0FDF4" stroke="#A7F3D0" stroke-width="1" stroke-dasharray="4,2"/>
+      <text x="878" y="204" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#065F46" font-weight="600">Python + Data</text>
+      <text x="878" y="215" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#065F46" font-weight="600">Engineering</text>
+      <text x="878" y="227" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7.5" fill="#059669" font-weight="600">In progress · 2024+</text>
+
+    </svg>
+
+    <!-- Legend -->
+    <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--border)">
+      <div style="display:flex;align-items:center;gap:.4rem;font-size:.72rem;color:var(--ink-mid)"><span style="display:block;width:10px;height:10px;border-radius:50%;background:#0A7CFF;flex-shrink:0"></span>Academic degree / BI certification</div>
+      <div style="display:flex;align-items:center;gap:.4rem;font-size:.72rem;color:var(--ink-mid)"><span style="display:block;width:10px;height:10px;border-radius:50%;background:#059669;flex-shrink:0"></span>Business / data specialization</div>
+      <div style="display:flex;align-items:center;gap:.4rem;font-size:.72rem;color:var(--ink-mid)"><span style="display:block;width:10px;height:10px;border-radius:50%;background:#D97706;flex-shrink:0"></span>Technical / cloud certification</div>
+      <div style="display:flex;align-items:center;gap:.4rem;font-size:.72rem;color:var(--ink-mid)"><span style="display:block;width:10px;height:10px;border-radius:50%;background:#7C3AED;flex-shrink:0"></span>Methodology certification</div>
+      <div style="display:flex;align-items:center;gap:.4rem;font-size:.72rem;color:var(--ink-mid)"><span style="display:block;width:10px;height:10px;border-radius:50%;background:none;border:2px dashed #059669;flex-shrink:0"></span>In progress</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════
+     SHOWCASE — DASHBOARD + PIPELINE
+════════════════════════════════════════════════ -->
+<div class="section" id="showcase2">
+  <div class="s-eyebrow">Work samples</div>
+  <h2 class="s-title">Executive <strong>dashboards</strong> &amp; data pipelines</h2>
+  <p class="s-sub">Designed for decisions — clear KPIs, clean architecture, and zero noise. Built to scale.</p>
+
+  <!-- DASHBOARD MOCKUP -->
+  <div class="dash-card reveal" style="margin-bottom:2rem">
+    <div class="dash-header">
+      <div class="dash-title-row">
+        <div class="dash-icon">
+          <svg viewBox="0 0 16 16"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>
+        </div>
+        <div>
+          <div class="dash-name">Sales Executive Dashboard</div>
+          <div style="font-size:.6rem;color:var(--ink-faint)">Power BI · Updated daily</div>
+        </div>
+      </div>
+      <div class="dash-period">Q4 2024</div>
+    </div>
+    <div class="dash-kpis">
+      <div class="dkpi">
+        <div class="dkpi-lbl">Total Revenue</div>
+        <div class="dkpi-num up">$4.8M</div>
+        <div class="dkpi-delta pos">↑ +22.4% vs Q3</div>
+      </div>
+      <div class="dkpi">
+        <div class="dkpi-lbl">Active Clients</div>
+        <div class="dkpi-num">1,247</div>
+        <div class="dkpi-delta pos">↑ +8.1%</div>
+      </div>
+      <div class="dkpi">
+        <div class="dkpi-lbl">Win Rate</div>
+        <div class="dkpi-num warn">38.2%</div>
+        <div class="dkpi-delta neg">↓ -2.1pp</div>
+      </div>
+      <div class="dkpi">
+        <div class="dkpi-lbl">Avg Deal Size</div>
+        <div class="dkpi-num up">$19.4K</div>
+        <div class="dkpi-delta pos">↑ +13.2%</div>
+      </div>
+    </div>
+    <div class="dash-body">
+      <div class="chart-row">
+        <div class="bar-chart-wrap">
+          <div class="bar-chart-label">Monthly Revenue (Jan–Aug)</div>
+          <div class="bars">
+            <div class="b" style="background:#BFDBFE;height:42%;animation-delay:.05s"></div>
+            <div class="b" style="background:#93C5FD;height:55%;animation-delay:.1s"></div>
+            <div class="b" style="background:#60A5FA;height:48%;animation-delay:.15s"></div>
+            <div class="b" style="background:#60A5FA;height:63%;animation-delay:.2s"></div>
+            <div class="b" style="background:#3B82F6;height:57%;animation-delay:.25s"></div>
+            <div class="b" style="background:#2563EB;height:79%;animation-delay:.3s"></div>
+            <div class="b" style="background:#1D4ED8;height:72%;animation-delay:.35s"></div>
+            <div class="b" style="background:#0A7CFF;height:96%;animation-delay:.4s"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-top:.3rem">
+            <span style="font-size:.55rem;color:var(--ink-faint)">Jan</span>
+            <span style="font-size:.55rem;color:var(--ink-faint)">Feb</span>
+            <span style="font-size:.55rem;color:var(--ink-faint)">Mar</span>
+            <span style="font-size:.55rem;color:var(--ink-faint)">Apr</span>
+            <span style="font-size:.55rem;color:var(--ink-faint)">May</span>
+            <span style="font-size:.55rem;color:var(--ink-faint)">Jun</span>
+            <span style="font-size:.55rem;color:var(--ink-faint)">Jul</span>
+            <span style="font-size:.55rem;color:var(--ink-faint)">Aug</span>
+          </div>
+        </div>
+        <div class="line-wrap" style="width:160px;flex-shrink:0">
+          <div class="line-label">Revenue by Region</div>
+          <!-- SVG donut -->
+          <div style="display:flex;flex-direction:column;align-items:center">
+            <svg width="100" height="100" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="38" fill="none" stroke="#EEF0F4" stroke-width="12"/>
+              <circle cx="50" cy="50" r="38" fill="none" stroke="#0A7CFF" stroke-width="12"
+                stroke-dasharray="95 144" stroke-dashoffset="38" stroke-linecap="round"/>
+              <circle cx="50" cy="50" r="38" fill="none" stroke="#34D399" stroke-width="12"
+                stroke-dasharray="55 184" stroke-dashoffset="-57" stroke-linecap="round"/>
+              <circle cx="50" cy="50" r="38" fill="none" stroke="#FCD34D" stroke-width="12"
+                stroke-dasharray="33 206" stroke-dashoffset="-112" stroke-linecap="round"/>
+              <text x="50" y="47" text-anchor="middle" font-family="Fraunces,serif" font-size="13" font-weight="600" fill="#0D1117">62%</text>
+              <text x="50" y="59" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7" fill="#9CA3AF">LATAM</text>
+            </svg>
+            <div style="font-size:.6rem;display:flex;flex-direction:column;gap:.2rem;width:100%">
+              <div style="display:flex;align-items:center;gap:.3rem"><span style="display:block;width:8px;height:8px;border-radius:2px;background:#0A7CFF;flex-shrink:0"></span><span style="color:var(--ink-mid)">LATAM 62%</span></div>
+              <div style="display:flex;align-items:center;gap:.3rem"><span style="display:block;width:8px;height:8px;border-radius:2px;background:#34D399;flex-shrink:0"></span><span style="color:var(--ink-mid)">US 23%</span></div>
+              <div style="display:flex;align-items:center;gap:.3rem"><span style="display:block;width:8px;height:8px;border-radius:2px;background:#FCD34D;flex-shrink:0"></span><span style="color:var(--ink-mid)">EU 15%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tbl-wrap">
+        <div class="tbl-row head">
+          <div class="tbl-cell h">Rep</div>
+          <div class="tbl-cell h">Revenue</div>
+          <div class="tbl-cell h">vs Target</div>
+          <div class="tbl-cell h">Status</div>
+        </div>
+        <div class="tbl-row">
+          <div class="tbl-cell" style="font-weight:500">Ana Souza</div>
+          <div class="tbl-cell">$842K</div>
+          <div class="tbl-cell" style="color:var(--green);font-weight:600">+18%</div>
+          <div class="tbl-cell"><span class="badge g">On track</span></div>
+        </div>
+        <div class="tbl-row">
+          <div class="tbl-cell" style="font-weight:500">Carlos Lima</div>
+          <div class="tbl-cell">$611K</div>
+          <div class="tbl-cell" style="color:var(--amber);font-weight:600">+4%</div>
+          <div class="tbl-cell"><span class="badge y">Watch</span></div>
+        </div>
+        <div class="tbl-row">
+          <div class="tbl-cell" style="font-weight:500">Maria Pinto</div>
+          <div class="tbl-cell">$923K</div>
+          <div class="tbl-cell" style="color:var(--green);font-weight:600">+31%</div>
+          <div class="tbl-cell"><span class="badge g">On track</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PIPELINE DIAGRAM -->
+  <div class="pipeline-wrap reveal">
+    <div class="pipeline-title">Data Pipeline Architecture</div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:0 .5rem">
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.5rem;flex:1">
+        <div style="width:52px;height:52px;border-radius:12px;background:#EEF0F4;display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 2px 8px rgba(0,0,0,.08)">🏦</div>
+        <div style="font-size:.68rem;font-weight:600;color:var(--ink);text-align:center;line-height:1.3">Sources</div>
+        <div style="font-size:.58rem;color:var(--ink-faint);text-align:center">ERP · CRM · APIs</div>
+      </div>
+
+      <div style="font-size:.75rem;color:var(--border-strong);padding-bottom:1.5rem;flex-shrink:0">→</div>
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.5rem;flex:1">
+        <div style="width:52px;height:52px;border-radius:12px;background:#EFF6FF;display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 2px 8px rgba(0,0,0,.08)">⚙️</div>
+        <div style="font-size:.68rem;font-weight:600;color:var(--ink);text-align:center;line-height:1.3">Ingestion</div>
+        <div style="font-size:.58rem;color:var(--ink-faint);text-align:center">AWS · Fivetran</div>
+      </div>
+
+      <div style="font-size:.75rem;color:var(--border-strong);padding-bottom:1.5rem;flex-shrink:0">→</div>
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.5rem;flex:1">
+        <div style="width:52px;height:52px;border-radius:12px;background:#F0FDF4;display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 2px 8px rgba(0,0,0,.08)">🗄️</div>
+        <div style="font-size:.68rem;font-weight:600;color:var(--ink);text-align:center;line-height:1.3">Warehouse</div>
+        <div style="font-size:.58rem;color:var(--ink-faint);text-align:center">BigQuery · Redshift</div>
+      </div>
+
+      <div style="font-size:.75rem;color:var(--border-strong);padding-bottom:1.5rem;flex-shrink:0">→</div>
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.5rem;flex:1">
+        <div style="width:52px;height:52px;border-radius:12px;background:#FFF7ED;display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 2px 8px rgba(0,0,0,.08)">🔧</div>
+        <div style="font-size:.68rem;font-weight:600;color:var(--ink);text-align:center;line-height:1.3">Transform</div>
+        <div style="font-size:.58rem;color:var(--ink-faint);text-align:center">SQL · dbt</div>
+      </div>
+
+      <div style="font-size:.75rem;color:var(--border-strong);padding-bottom:1.5rem;flex-shrink:0">→</div>
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.5rem;flex:1">
+        <div style="width:52px;height:52px;border-radius:12px;background:#EFF6FF;display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 2px 8px rgba(0,0,0,.08)">📊</div>
+        <div style="font-size:.68rem;font-weight:600;color:var(--ink);text-align:center;line-height:1.3">Visualize</div>
+        <div style="font-size:.58rem;color:var(--ink-faint);text-align:center">Power BI · Tableau</div>
+      </div>
+
+      <div style="font-size:.75rem;color:var(--border-strong);padding-bottom:1.5rem;flex-shrink:0">→</div>
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.5rem;flex:1">
+        <div style="width:52px;height:52px;border-radius:12px;background:#F0FDF4;display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 2px 8px rgba(0,0,0,.08)">🎯</div>
+        <div style="font-size:.68rem;font-weight:600;color:var(--ink);text-align:center;line-height:1.3">Decision</div>
+        <div style="font-size:.58rem;color:var(--ink-faint);text-align:center">Executives · Board</div>
+      </div>
+
+    </div>
+    <div style="margin-top:1.5rem;padding-top:1.2rem;border-top:1px solid var(--border)">
+      <div style="font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.75rem;text-align:center">Key technologies across the stack</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center">
+        <span class="chip">SQL</span><span class="chip blue">BigQuery</span><span class="chip">AWS S3</span><span class="chip blue">dbt</span><span class="chip">Fivetran</span><span class="chip blue">Power BI</span><span class="chip">Tableau</span><span class="chip">Salesforce</span><span class="chip blue">Python</span><span class="chip">Airflow</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════
+     EXPERIENCE
+════════════════════════════════════════════════ -->
+<div class="section" id="experience">
+  <div class="s-eyebrow">Career</div>
+  <h2 class="s-title">Industries &amp; <strong>experience</strong></h2>
+  <p class="s-sub">10+ years across high-complexity, data-dense environments — always translating numbers into business narrative.</p>
+
+  <div class="exp-grid">
+    <div class="exp-card reveal">
+      <div class="exp-sector">Financial Services</div>
+      <span class="exp-icon">🏦</span>
+      <div class="exp-name">Banking Analytics</div>
+      <div class="exp-desc">Financial KPIs, risk dashboards, and regulatory reporting. Complex models with high data integrity requirements.</div>
+      <div class="exp-tags">
+        <span class="etag">SQL</span><span class="etag">Power BI</span><span class="etag">Financial KPIs</span><span class="etag">Data Modeling</span>
+      </div>
+    </div>
+    <div class="exp-card reveal" style="animation-delay:.1s">
+      <div class="exp-sector">Pharmaceutical</div>
+      <span class="exp-icon">💊</span>
+      <div class="exp-name">Pharma Analytics</div>
+      <div class="exp-desc">Sales force performance, market share analysis, and Salesforce CRM analytics for commercial excellence teams.</div>
+      <div class="exp-tags">
+        <span class="etag">Salesforce</span><span class="etag">Tableau</span><span class="etag">Sales Analytics</span><span class="etag">BigQuery</span>
+      </div>
+    </div>
+    <div class="exp-card reveal" style="animation-delay:.2s">
+      <div class="exp-sector">Strategy Consulting</div>
+      <span class="exp-icon">🏢</span>
+      <div class="exp-name">Consulting</div>
+      <div class="exp-desc">Cross-industry projects delivering executive-level insights, analytics strategy, and scalable reporting infrastructure.</div>
+      <div class="exp-tags">
+        <span class="etag">Analytics Eng.</span><span class="etag">AWS</span><span class="etag">Scrum</span><span class="etag">Exec Reporting</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════
+     WHAT I DELIVER
+════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="s-eyebrow">Value proposition</div>
+  <h2 class="s-title">What I <strong>deliver</strong></h2>
+  <p class="s-sub">Not just dashboards — outcomes. Analytics that support real strategic decisions.</p>
+
+  <div class="deliver-grid">
+    <div class="d-card reveal">
+      <div class="d-icon">🎯</div>
+      <div>
+        <div class="d-title">Dashboards executives actually use</div>
+        <div class="d-desc">Designed for decisions, not decoration. Clear KPIs, intuitive layout, zero noise. If it doesn't answer a business question, it's not on the screen.</div>
+      </div>
+    </div>
+    <div class="d-card reveal" style="animation-delay:.1s">
+      <div class="d-icon">🔍</div>
+      <div>
+        <div class="d-title">Metrics that answer "so what?"</div>
+        <div class="d-desc">Not just what happened — but why it matters and what to do next. Analytics with business context baked in.</div>
+      </div>
+    </div>
+    <div class="d-card reveal" style="animation-delay:.2s">
+      <div class="d-icon">⚙️</div>
+      <div>
+        <div class="d-title">Reliable, scalable data models</div>
+        <div class="d-desc">Clean SQL architecture that survives real-world data chaos. Built for growth, not just the next sprint demo.</div>
+      </div>
+    </div>
+    <div class="d-card reveal" style="animation-delay:.3s">
+      <div class="d-icon">🤝</div>
+      <div>
+        <div class="d-title">Bridge between data &amp; business</div>
+        <div class="d-desc">Strong communication with technical and non-technical stakeholders. Translating complexity into clarity — in English, Portuguese, or Spanish.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════
+     CONTACT
+════════════════════════════════════════════════ -->
+<div class="contact-wrap" id="contact">
+  <div class="contact-inner">
+    <div class="contact-eyebrow">Get in touch</div>
+    <div class="contact-title">Ready to build something that <em style="font-style:italic;color:#93C5FD">actually matters</em>?</div>
+    <p class="contact-sub">Open to consulting projects, full-time roles, and analytics strategy engagements — Brazil &amp; international.</p>
+    <div class="contact-btns">
+      <a href="https://www.linkedin.com/in/gustavo-taguchi/" class="btn btn-white" target="_blank">LinkedIn ↗</a>
+      <a href="https://github.com/gutaguchi" class="btn btn-ghost-white" target="_blank">GitHub ↗</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 Gustavo Taguchi · Senior Data Analyst · São Paulo, Brazil
+</footer>
+
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
